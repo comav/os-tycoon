@@ -1,21 +1,45 @@
 <html>
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>OS Tycoon</title>
     <link rel="stylesheet" href="styles/style.css">
-    <script src="scripts/index.js"></script>
+    <script src="scripts/index.js" defer></script>
 </head>
+
 <body>
-    <ul class="gameMenu">
-        <li>Home</li>
-        <li>Stats</li>
-        <li>Add</li>
-        <li>Team</li>
-        <li>News</li>
-        <li>Feedback</li>
-        <li>OS</li>
-        <li>Updates</li>
-    </ul>
+    <div class="topLayer">
+        <ul class="gameMenu">
+            <li><img class="menuIcon" onclick="changeTab('home')" src="assets/icons/home.png"></a></li>
+            <li><img class="menuIcon" onclick="changeTab('stats')" src="assets/icons/stats.png"></a></li>
+            <li><img class="menuIcon" onclick="changeTab('add')" src="assets/icons/add.png"></a></li>
+            <li><img class="menuIcon" onclick="changeTab()" src="assets/icons/team.png"></a></li>
+            <li><img class="menuIcon" onclick="changeTab()" src="assets/icons/news.png"></a></li>
+            <li><img class="menuIcon" onclick="changeTab()" src="assets/icons/feedback.png"></a></li>
+            <li><img class="menuIcon" onclick="changeTab()" src="assets/icons/os.png"></a></li>
+            <li><img class="menuIcon" onclick="changeTab()" src="assets/icons/update.png"></a></li>
+        </ul>
+        <div class="tabWrapper">
+            <div class="tab-wrapper">
+                <div id="home" class="tab">
+                    <p>This is home tab</p>
+                </div>
+                <div id="stats" class="tab">
+                    <p>And this is stats tab</p>
+                </div>
+                <div id="add" class="tab">
+                    <p>And here you CAN ADD SOMETHING IN FUTURE!!!!!!!@!!!!!1!!11</p>
+                </div>
+            </div>
+            <div class="infoBarWrapper">
+                <div class="infoBar">
+                    <h1>testtttttttttttttttttt</h1>
+                </div>
+            </div>
+        </div>
+    </div>
+
 </body>
+
 </html>

@@ -1,27 +1,78 @@
-.gameMenu {
-    li {
+
+body, html {
+    height: 100%;
+    margin: 0;
+    padding: 0;
+}
+
+h1, h2, h3, h4, h5, h6 {
+    margin: 0;
+    padding: 0;
+}
+
+.topLayer {
+    display: flex;
+    height: 100%;
+    .infoBar{
         display: flex;
-        text-decoration: none;
-        list-style-type: none;
-        margin: 0 0 0 0;
-        padding: 0;
-        flex-grow: 1;
-        width: 100px;    
-        border-right-color: black;
-        border-right-width: 5px;
-        border-right-style: solid;
+        flex-direction: row;
+        align-items: flex-end;
         justify-content: center;
-        align-items: center;
-        &:hover {
-            border-right-color: rgba(0, 0, 0, 0);
-            cursor: pointer;
+        border-top: 5px solid #000;
+        margin: 0;
+    }
+    .gameMenu {
+        z-index: 999;
+        width: 100px;
+        height: 100%;
+        display: flex;
+        flex-direction: column;
+        flex-basis: 10%;
+        padding: 0 0 0 0;
+        margin: 0 0 0 0;
+
+        .menuIcon {
+            width: 50px;
+        }
+        li {
+            display: flex;
+            text-decoration: none;
+            list-style-type: none;
+            margin: 0 0 0 0;
+            padding: 0;
+            flex-grow: 1;
+            width: 100px;
+            border-right-color: black;
+            border-right-width: 5px;
+            border-right-style: solid;
+            justify-content: center;
+            align-items: center;
+
+            &:hover {
+                border-right-color: rgba(0, 0, 0, 0);
+                cursor: pointer;
+            }
         }
     }
-    width: 100px;
+
+}
+
+.tab {
     height: 100%;
+    display: none;
+}
+
+.tabWrapper {
+    width: 100%;
     display: flex;
     flex-direction: column;
-    flex-basis: 10%;
-    padding: 0 0 0 0;
-    margin: 0 0 0 0;
+}
+
+.infoBarWrapper{
+    height: 10%;
+    margin: 0;
+}
+
+.tab-wrapper {
+    height: 90%;
 }
