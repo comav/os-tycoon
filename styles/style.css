@@ -107,4 +107,52 @@ h1, h2, h3, h4, h5, h6 {
 .tab-wrapper {
   height: 90%;
 }
+
+.bubble-wrapper {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: end;
+      -ms-flex-align: end;
+          align-items: flex-end;
+}
+
+.bubble-wrapper .bubble {
+  width: 50px;
+  height: 50px;
+  background: #000;
+  border-radius: 100%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  margin-top: 10px;
+  margin-bottom: 10px;
+  margin-right: 10px;
+}
+
+.bubble-wrapper #tech-bubble {
+  background-color: #0084ff;
+}
+
+.bubble-wrapper #design-bubble {
+  background-color: #00ff15;
+}
+
+.bubble-wrapper #bug-bubble {
+  background-color: red;
+}
+
+.bubble-wrapper .bubble-text {
+  color: #fff;
+}
 /*# sourceMappingURL=style.css.map */

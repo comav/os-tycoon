@@ -76,3 +76,33 @@ h1, h2, h3, h4, h5, h6 {
 .tab-wrapper {
     height: 90%;
 }
+
+.bubble-wrapper {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    .bubble {
+        width: 50px;
+        height: 50px;
+        background: #000;
+        border-radius: 100%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        margin-top: 10px;
+        margin-bottom: 10px;
+        margin-right: 10px;
+    }
+    #tech-bubble {
+        background-color: rgb(0, 132, 255);
+    }
+    #design-bubble {
+        background-color: rgb(0, 255, 21);
+    }
+    #bug-bubble {
+        background-color: rgb(255, 0, 0);
+    }
+    .bubble-text {
+        color: #fff;
+    }
+}

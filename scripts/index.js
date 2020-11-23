@@ -7,3 +7,5 @@ function changeTab (tabId) {
     }
     currentTab.style.display = 'block';
 }
+
+changeTab("home");
