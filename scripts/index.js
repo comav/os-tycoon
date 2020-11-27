@@ -1,5 +1,7 @@
 var localStorage = window.localStorage;
 var tech, design, bugs;
+var news = [];
+var newsJSON = require('/assets/data/news.json');
 
 function changeTab(tabId) {
     let tabs = Array.from(document.getElementsByClassName('tab'));
@@ -12,6 +14,7 @@ function changeTab(tabId) {
 
 changeTab("home");
 $('.bubble').css('display','none');
+
 
 function showBubbles () {
     $('.bubble').css('display', 'block');
