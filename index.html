@@ -19,7 +19,7 @@
             <li><img class="menuIcon" onclick="changeTab('stats'); osChart();" src="assets/icons/stats.png"></a></li>
             <li><img class="menuIcon" onclick="changeTab('add')" src="assets/icons/add.png"></a></li>
             <li><img class="menuIcon" onclick="changeTab()" src="assets/icons/team.png"></a></li>
-            <li><img class="menuIcon" onclick="changeTab()" src="assets/icons/feedback.png"></a></li>
+            <li><img class="menuIcon" onclick="changeTab('feedback'); getFeedback()" src="assets/icons/feedback.png"></a></li>
             <li><img class="menuIcon" onclick="changeTab()" src="assets/icons/os.png"></a></li>
             <li><img class="menuIcon" onclick="changeTab()" src="assets/icons/update.png"></a></li>
         </ul>
@@ -60,23 +60,24 @@
                             </ul>
                         </div>
                         <div class="news-reader" id="news-reader">
-                            <h1><-- choose something here</h1>
+                            <h1><-- choose something here</h1> </div> </div> </div> <div id="add" class="tab">
+                                <div class="add-wrapper">
+                                    <div class="add-tab-content" id="add-os-version">Add OS Version</div>
+                                    <div class="add-tab-content" id="add-device">Add device</div>
+                                </div>
+                        </div>
+                        <div id="feedback" class="tab">
+                            <div><h1><</h1></div>
+                            <div><p id="feedbackText"></p></div>
+                            <div><h1>></h1></div>
+                        </div>
+                    </div>
+                    <div class="infoBarWrapper">
+                        <div class="infoBar">
                         </div>
                     </div>
                 </div>
-                <div id="add" class="tab">
-                    <div class="add-wrapper">
-                        <div class="add-tab-content" id="add-os-version">Add OS Version</div>
-                        <div class="add-tab-content" id="add-device">Add device</div>
-                    </div>
-                </div>
             </div>
-            <div class="infoBarWrapper">
-                <div class="infoBar">
-                </div>
-            </div>
-        </div>
-    </div>
 
 </body>
 
