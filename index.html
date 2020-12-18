@@ -19,7 +19,7 @@
             <li><img class="menuIcon" onclick="changeTab('stats'); osChart();" src="assets/icons/stats.png"></a></li>
             <li><img class="menuIcon" onclick="changeTab('add')" src="assets/icons/add.png"></a></li>
             <li><img class="menuIcon" onclick="changeTab()" src="assets/icons/team.png"></a></li>
-            <li><img class="menuIcon" onclick="changeTab()" src="assets/icons/news.png"></a></li>
+            <!-- <li><img class="menuIcon" onclick="changeTab()" src="assets/icons/news.png"></a></li> -->
             <li><img class="menuIcon" onclick="changeTab()" src="assets/icons/feedback.png"></a></li>
             <li><img class="menuIcon" onclick="changeTab()" src="assets/icons/os.png"></a></li>
             <li><img class="menuIcon" onclick="changeTab()" src="assets/icons/update.png"></a></li>
@@ -40,7 +40,30 @@
                     </div>
                 </div>
                 <div id="stats" class="tab">
-                    <canvas id="os-chart" aria-label="OS chart"></canvas>
+                    <div class="top-wrapper">
+                        <div class="chart-wrapper">
+                            <canvas id="os-chart" aria-label="OS chart"></canvas>
+                        </div>
+                        <div class="trends border">
+                            <h3>trends</h3>
+                            <ul>
+                                <li>Lorem</li>
+                                <li>Ipsum</li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="bottom-wrapper">
+                        <div class="news border" id="news-list">
+                            <ul>
+                                <li>Lorem</li>
+                                <li>Ipsum</li>
+                                <li>Lorem</li>
+                            </ul>
+                        </div>
+                        <div class="news-reader" id="news-reader">
+                            <h1>"<--" choose something here</h1>
+                        </div>
+                    </div>
                 </div>
                 <div id="add" class="tab">
                     <div class="add-wrapper">
@@ -51,7 +74,6 @@
             </div>
             <div class="infoBarWrapper">
                 <div class="infoBar">
-
                 </div>
             </div>
         </div>

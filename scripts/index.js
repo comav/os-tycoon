@@ -14,14 +14,14 @@ function changeTab(tabId) {
 
 //code that runs on load
 changeTab("home");
-$('.bubble').css('display','none');
-$.getJSON("/assets/data/data.json", function(obtainedData){
+$('.bubble').css('display', 'none');
+$.getJSON("/assets/data/data.json", function (obtainedData) {
     console.log('asd');
     data = obtainedData;
 })
 
 
-function showBubbles () {
+function showBubbles() {
     $('.bubble').css('display', 'block');
 }
 
@@ -48,8 +48,16 @@ function osChart() {
                 borderWidth: 1,
                 borderAlign: 'left'
             }]
+        }, 
+        options: {
+            legend: {
+                display: true,
+                position: 'right'
+            },
+            mantainAspectRatio: false,
+            responsive: false
         }
-    })
+    }) 
 
 }
 

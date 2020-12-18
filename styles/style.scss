@@ -108,8 +108,8 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 #os-chart {
-    width: 300px;
-    height: 300px;
+    width: 100%;
+    height: 100%;
 }
 
 .add-wrapper {
@@ -137,4 +137,32 @@ h1, h2, h3, h4, h5, h6 {
         border-width: 10px;
         font-style: 60px;
     }
+}
+
+.chart-wrapper {
+    display: flex;
+    border: solid 2px black;
+    flex-grow: 1;
+}
+
+.top-wrapper {
+    display: inline-flex;
+    height: 50%;
+    width: 100%;
+}
+
+.bottom-wrapper {
+    display: inline-flex;
+    height: 50%;
+    width: 100%;
+}
+
+.trends {
+    display: flex;
+    flex-grow: 2;
+}
+
+.border {
+    //for debug and layout view
+    border: solid 2px black;
 }
