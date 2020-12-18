@@ -1,11 +1,16 @@
-
-body, html {
+body,
+html {
     height: 100%;
     margin: 0;
     padding: 0;
 }
 
-h1, h2, h3, h4, h5, h6 {
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
     margin: 0;
     padding: 0;
 }
@@ -13,7 +18,8 @@ h1, h2, h3, h4, h5, h6 {
 .topLayer {
     display: flex;
     height: 100%;
-    .infoBar{
+
+    .infoBar {
         display: flex;
         flex-direction: row;
         align-items: flex-end;
@@ -21,6 +27,7 @@ h1, h2, h3, h4, h5, h6 {
         border-top: 5px solid #000;
         margin: 0;
     }
+
     .gameMenu {
         z-index: 999;
         width: 100px;
@@ -34,6 +41,7 @@ h1, h2, h3, h4, h5, h6 {
         .menuIcon {
             width: 50px;
         }
+
         li {
             display: flex;
             text-decoration: none;
@@ -68,7 +76,7 @@ h1, h2, h3, h4, h5, h6 {
     flex-direction: column;
 }
 
-.infoBarWrapper{
+.infoBarWrapper {
     height: 10%;
     margin: 0;
 }
@@ -81,6 +89,7 @@ h1, h2, h3, h4, h5, h6 {
     display: flex;
     flex-direction: column;
     align-items: flex-end;
+
     .bubble {
         width: 50px;
         height: 50px;
@@ -93,73 +102,80 @@ h1, h2, h3, h4, h5, h6 {
         margin-bottom: 10px;
         margin-right: 10px;
     }
+
     #tech-bubble {
         background-color: rgb(0, 132, 255);
     }
+
     #design-bubble {
         background-color: rgb(0, 255, 21);
     }
+
     #bug-bubble {
         background-color: rgb(255, 0, 0);
     }
+
     .bubble-text {
         color: #fff;
     }
 }
 
-#os-chart {
-    width: 100%;
-    height: 100%;
-}
-
-.add-wrapper {
-    display: flex;
-    height: 100%;
-    justify-content: center;
-    align-items: center;
-}
-
-
-.add-tab-content {
-    font-size: 40px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    width: 45%;
-    height: 95%;
-    border: black solid 5px;
-    border-radius: 10px;
-    margin: 10 10 10 10;
-    transition: all 0.2s ease-out;
-    padding-left: 10px;
-    padding-right: 10px;
-    &:hover {
-        border-width: 10px;
-        font-style: 60px;
+.tab {
+    #os-chart {
+        width: 100%;
+        height: 100%;
     }
-}
 
-.chart-wrapper {
-    display: flex;
-    border: solid 2px black;
-    flex-grow: 1;
-}
+    .add-wrapper {
+        display: flex;
+        height: 100%;
+        justify-content: center;
+        align-items: center;
+    }
 
-.top-wrapper {
-    display: inline-flex;
-    height: 50%;
-    width: 100%;
-}
 
-.bottom-wrapper {
-    display: inline-flex;
-    height: 50%;
-    width: 100%;
-}
+    .add-tab-content {
+        font-size: 40px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        width: 45%;
+        height: 95%;
+        border: black solid 5px;
+        border-radius: 10px;
+        margin: 10 10 10 10;
+        transition: all 0.2s ease-out;
+        padding-left: 10px;
+        padding-right: 10px;
 
-.trends {
-    display: flex;
-    flex-grow: 2;
+        &:hover {
+            border-width: 10px;
+            font-style: 60px;
+        }
+    }
+
+    .chart-wrapper {
+        display: flex;
+        border: solid 2px black;
+        flex-grow: 1;
+    }
+
+    .top-wrapper {
+        display: inline-flex;
+        height: 50%;
+        width: 100%;
+    }
+
+    .bottom-wrapper {
+        display: inline-flex;
+        height: 50%;
+        width: 100%;
+    }
+
+    .trends {
+        display: flex;
+        flex-grow: 2;
+    }
 }
 
 .border {

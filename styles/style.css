@@ -1,10 +1,16 @@
-body, html {
+body,
+html {
   height: 100%;
   margin: 0;
   padding: 0;
 }
 
-h1, h2, h3, h4, h5, h6 {
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
   margin: 0;
   padding: 0;
 }
@@ -156,12 +162,12 @@ h1, h2, h3, h4, h5, h6 {
   color: #fff;
 }
 
-#os-chart {
+.tab #os-chart {
   width: 100%;
   height: 100%;
 }
 
-.add-wrapper {
+.tab .add-wrapper {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -174,7 +180,7 @@ h1, h2, h3, h4, h5, h6 {
           align-items: center;
 }
 
-.add-tab-content {
+.tab .add-tab-content {
   font-size: 40px;
   display: -webkit-box;
   display: -ms-flexbox;
@@ -196,12 +202,12 @@ h1, h2, h3, h4, h5, h6 {
   padding-right: 10px;
 }
 
-.add-tab-content:hover {
+.tab .add-tab-content:hover {
   border-width: 10px;
   font-style: 60px;
 }
 
-.chart-wrapper {
+.tab .chart-wrapper {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -211,7 +217,7 @@ h1, h2, h3, h4, h5, h6 {
           flex-grow: 1;
 }
 
-.top-wrapper {
+.tab .top-wrapper {
   display: -webkit-inline-box;
   display: -ms-inline-flexbox;
   display: inline-flex;
@@ -219,7 +225,7 @@ h1, h2, h3, h4, h5, h6 {
   width: 100%;
 }
 
-.bottom-wrapper {
+.tab .bottom-wrapper {
   display: -webkit-inline-box;
   display: -ms-inline-flexbox;
   display: inline-flex;
@@ -227,7 +233,7 @@ h1, h2, h3, h4, h5, h6 {
   width: 100%;
 }
 
-.trends {
+.tab .trends {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
