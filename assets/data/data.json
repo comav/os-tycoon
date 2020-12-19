@@ -1,12 +1,50 @@
-{
-    "feedbacks": [
-        {
-            "title": "good, I like it",
-            "rating": 10
-        },
-        {
-            "title": "bad, I hate it",
-            "rating": 1
-        }
-    ]
-}
+{"feedbacks": [
+    {
+        "title": "good, I like it",
+        "rating": 10
+    },
+    {
+        "title": "bad, I hate it",
+        "rating": 1
+    },
+    {
+        "title": "theres way to improve it",
+        "rating": 5
+    },
+    {
+        "title": "bad luck",
+        "rating": 2
+    },
+    {
+        "title": "great",
+        "rating": 10
+    },
+    {
+        "title": "yay its free",
+        "rating": 8
+    },
+    {
+        "title": "more features!",
+        "rating": 9
+    },
+    {
+        "title": "good idea, bad realization",
+        "rating": 4
+    },
+    {
+        "title": "sksksksksksk",
+        "rating": 10
+    },
+    {
+        "title": "my grandpa likes it",
+        "rating": 8
+    },
+    {
+        "title": "lacking some features",
+        "rating": 7
+    },
+    {
+        "title": "theres a bbg please fix it",
+        "rating": 6
+    }
+]}

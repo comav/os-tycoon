@@ -10,7 +10,11 @@ function changeTab(tabId) {
     for (let i = 0; i < tabs.length; i++) {
         tabs[i].style.display = 'none';
     }
-    currentTab.style.display = 'block';
+    if (tabId == 'feedback') {
+        currentTab.style.display = 'flex';
+    } else {
+        currentTab.style.display = 'block';
+    }
 }
 
 //code that runs on load
@@ -62,8 +66,9 @@ function osChart() {
 }
 
 function getFeedback() {
-    var randomNum = generateRandomNum(0, 0);
+    var randomNum = generateRandomNum(0, 11);
     document.getElementById('feedbackText').innerText = data.feedbacks[randomNum].title;
+    document.getElementById('rating').innerText = data.feedbacks[randomNum].rating;
 }
 
 function generateRandomNum(min, max) {
