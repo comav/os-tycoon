@@ -1,22 +1,12 @@
 {
-    "fb1": {
-        "rating": 10,
-        "body": "I liked the new feature and I like to use it!"
-    },
-    "fb2": {
-        "rating": 1,
-        "body": "ur os is bad"
-    },
-    "fb3": {
-        "rating": 8,
-        "body": "There's some bugs, but they aren't critical"
-    },
-    "fb4": {
-        "rating": 5,
-        "body": "Happy New Year!!!"
-    },
-    "fb5": {
-        "rating": 3,
-        "body": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent odio massa, fringilla."
-    }
+    "gee": [
+        {
+            "title": "good, I like it",
+            "rating": 10
+        },
+        {
+            "title": "bad, I hate it",
+            "rating": 1
+        }
+    ]
 }

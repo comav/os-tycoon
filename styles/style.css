@@ -269,6 +269,13 @@ h6 {
   width: 350px;
 }
 
+.tab .feedback {
+  display: flex-inline;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+
 .border {
   border: solid 2px black;
 }

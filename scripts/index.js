@@ -2,6 +2,7 @@ var localStorage = window.localStorage;
 var tech, design, bugs;
 var news;
 var data, feedback;
+var isOk;
 
 function changeTab(tabId) {
     let tabs = Array.from(document.getElementsByClassName('tab'));
@@ -19,11 +20,6 @@ $.getJSON("/assets/data/data.json", function (obtainedData) {
     console.log('asd');
     data = obtainedData;
 })
-$.getJSON("/assets/data/feedback.json", function (obtainedFB) {
-    console.log('gee');
-    feedback = obtainedFB;
-})
-
 
 function showBubbles() {
     $('.bubble').css('display', 'block');
@@ -66,9 +62,8 @@ function osChart() {
 }
 
 function getFeedback() {
-    var randomNum = generateRandomNum(1, 5);
-    var randomFb = 'fb' + randomNum;
-    document.getElementById('feedbackText').innerText = feedback..body;
+    var randomNum = generateRandomNum(0, 0);
+    document.getElementById('feedbackText').innerText = data.feedbacks[randomNum].title;
 }
 
 function generateRandomNum(min, max) {

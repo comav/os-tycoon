@@ -1,0 +1,12 @@
+{
+    "feedbacks": [
+        {
+            "title": "good, I like it",
+            "rating": 10
+        },
+        {
+            "title": "bad, I hate it",
+            "rating": 1
+        }
+    ]
+}
