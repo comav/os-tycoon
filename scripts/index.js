@@ -1,5 +1,6 @@
 var localStorage = window.localStorage;
 var progress = 0;
+var employees = [];
 var tech, design, bugs, news, data, feedback, isOk;
 
 function changeTab(tabId) {
@@ -74,3 +75,44 @@ function changeProgress (percentage) {
         return;
     }
 }
+<<<<<<< HEAD
+=======
+
+function generateEmployee () {
+    var gender = data.employees.gender[generateRandomNum(0, 1)];
+    if (gender == "male") {
+        var name = data.employees.male.names[generateRandomNum(0, 99)] + ' '+ data.employees.surnames[generateRandomNum(0, 199)];
+        var age = generateRandomNum(20, 43);
+        var resultEmployee = {
+            "name": name,
+            "age": age,
+            "gender": gender
+        }
+        employees.push(resultEmployee);
+        console.log('1 ' + gender + ' employee was generated');
+        // updateEmployees();
+        return;
+    } if (gender == "female") {
+        var name = data.employees.female.names[generateRandomNum(0, 99)] + ' '+ data.employees.surnames[generateRandomNum(0, 199)];
+        var age = generateRandomNum(20, 43);
+        var resultEmployee = {
+            "name": name,
+            "age": age,
+            "gender": gender
+        }
+        employees.push(resultEmployee);
+        console.log('1 ' + gender + ' employee was generated');
+        // updateEmployees();
+        return;
+    }
+}
+
+// function updateEmployees () {
+//     var employeeList = document.getElementById('employees');
+//     for (var i = 0; i == employees.length; i++) {
+//         var newEmployee = document.createElement('p');
+//         newEmployee.createTextNode(employees[i].name + ',' + employees[i].age + ',' + employees[i].gender);
+//         employeeList.appendChild(newEmployee);
+//     }
+// }
+>>>>>>> 4c5a8a6 (Added employee generator)
