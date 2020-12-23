@@ -85,6 +85,53 @@ h6 {
 .infoBarWrapper {
     height: 10%;
     margin: 0;
+    .infoBar {
+        display: inline-flex;
+        width: 100%;
+        justify-content: start;
+        align-items: center;
+
+        .counters {
+            display: flex;
+            justify-content: flex-end;
+            flex-grow: 1;
+            align-items: center;
+        }
+
+        .progressbar {
+            height: 30px;
+            border-radius: 9px;
+            border: solid 0.5px black;
+            width: 600px;
+            margin-left: 10px;
+            flex-grow: 3;
+
+            .progress {
+                background-color: black;
+                height: inherit;
+                width: 0;
+                border-radius: inherit;
+            }
+        }
+
+        .money {
+            display: flex;
+            justify-content: end;
+            color: white;
+            margin: 0 5 0 5;
+            padding: 5 5 5 5;
+            border-radius: 9px;
+            background: linear-gradient(45deg, rgb(0, 165, 0), rgb(0, 206, 0));
+        }
+
+        .research {
+            color: white;
+            padding: 5 5 5 5;
+            border-radius: 9px;
+            background: linear-gradient(45deg, rgb(0, 185, 185), cyan);
+            margin: 0 5 0 5;
+        }
+    }
 }
 
 .tab-wrapper {
