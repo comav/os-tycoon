@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>OS Tycoon</title>
     <link rel="stylesheet" href="styles/style.css">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
     <script src="scripts/index.js" defer></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.9.4/Chart.min.js"
         integrity="sha512-d9xgZrVZpmmQlfonhQUvTR7lMPtO7NkZMkA0ABN3PHCbKA5nqylQ/yWlFAyY6hYgdF1Qh6nYiuADWwKB4C2WSw=="
@@ -15,6 +16,7 @@
 <body>
     <div class="topLayer">
         <ul class="gameMenu">
+<<<<<<< HEAD
             <li><img class="menuIcon" onclick="changeTab('home')" src="assets/icons/home.png"></a></li>
             <li><img class="menuIcon" onclick="changeTab('stats'); osChart();" src="assets/icons/stats.png"></a></li>
             <li><img class="menuIcon" onclick="changeTab('add')" src="assets/icons/add.png"></a></li>
@@ -23,6 +25,16 @@
             <li><img class="menuIcon" onclick="changeTab()" src="assets/icons/feedback.png"></a></li>
             <li><img class="menuIcon" onclick="changeTab()" src="assets/icons/os.png"></a></li>
             <li><img class="menuIcon" onclick="changeTab()" src="assets/icons/update.png"></a></li>
+=======
+            <li onclick="changeTab('home')"><img class="menuIcon" src="assets/icons/home.png"></a></li>
+            <li onclick="changeTab('stats'); osChart();"><img class="menuIcon" src="assets/icons/stats.png"></a></li>
+            <li onclick="changeTab('add')"><img class="menuIcon" src="assets/icons/add.png"></a></li>
+            <li onclick="changeTab()"><img class="menuIcon" src="assets/icons/team.png"></a></li>
+            <li onclick="changeTab('feedback'); getFeedback()"><img class="menuIcon"
+                    onclick="changeTab('feedback'); getFeedback()" src="assets/icons/feedback.png"></a></li>
+            <li onclick="changeTab()"><img class="menuIcon" src="assets/icons/os.png"></a></li>
+            <li onclick="changeTab()"><img class="menuIcon" src="assets/icons/update.png"></a></li>
+>>>>>>> ecd276e (Infobar prototype)
         </ul>
         <div class="tabWrapper">
             <div class="tab-wrapper">
@@ -61,7 +73,11 @@
                             </ul>
                         </div>
                         <div class="news-reader" id="news-reader">
+<<<<<<< HEAD
                             <h1>"<--" choose something here</h1>
+=======
+                            <h1>choose something</h1>
+>>>>>>> ecd276e (Infobar prototype)
                         </div>
                     </div>
                 </div>
@@ -69,6 +85,7 @@
                     <div class="add-wrapper">
                         <div class="add-tab-content" id="add-os-version">Add OS Version</div>
                         <div class="add-tab-content" id="add-device">Add device</div>
+<<<<<<< HEAD
                     </div>
                 </div>
             </div>
@@ -76,6 +93,30 @@
                 <div class="infoBar">
                 </div>
             </div>
+=======
+                    </div>
+                </div>
+                <div id="feedback" class="tab">
+                    <div class="rating-wrapper">
+                        <p id="rating"></p>
+                        <p>/10</p>
+                    </div>
+                    <div>
+                        <p id="feedbackText"></p>
+                    </div>
+                    <button onclick="getFeedback()">Get feedback!</button>
+                </div>
+            </div>
+            <div class="infoBarWrapper">
+                <div class="infoBar">
+                    <div class="progressbar" id="progressbar"><div class="progress" id="progress"></div></div>
+                    <div class="counters">
+                        <p class="money" id="money"><span class="material-icons">attach_money</span>8800553535</p>
+                        <p class="research" id="res-points"><span class="material-icons">science</span>100500</p>
+                    </div>
+                </div>
+            </div>
+>>>>>>> ecd276e (Infobar prototype)
         </div>
     </div>
 

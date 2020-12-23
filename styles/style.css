@@ -110,6 +110,74 @@ h6 {
   margin: 0;
 }
 
+.infoBarWrapper .infoBar {
+  display: -webkit-inline-box;
+  display: -ms-inline-flexbox;
+  display: inline-flex;
+  width: 100%;
+  -webkit-box-pack: start;
+      -ms-flex-pack: start;
+          justify-content: start;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.infoBarWrapper .infoBar .counters {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: end;
+      -ms-flex-pack: end;
+          justify-content: flex-end;
+  -webkit-box-flex: 1;
+      -ms-flex-positive: 1;
+          flex-grow: 1;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.infoBarWrapper .infoBar .progressbar {
+  height: 30px;
+  border-radius: 9px;
+  border: solid 0.5px black;
+  width: 600px;
+  margin-left: 10px;
+  -webkit-box-flex: 3;
+      -ms-flex-positive: 3;
+          flex-grow: 3;
+}
+
+.infoBarWrapper .infoBar .progressbar .progress {
+  background-color: black;
+  height: inherit;
+  width: 0;
+  border-radius: inherit;
+}
+
+.infoBarWrapper .infoBar .money {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: end;
+      -ms-flex-pack: end;
+          justify-content: end;
+  color: white;
+  margin: 0 5 0 5;
+  padding: 5 5 5 5;
+  border-radius: 9px;
+  background: linear-gradient(45deg, #00a500, #00ce00);
+}
+
+.infoBarWrapper .infoBar .research {
+  color: white;
+  padding: 5 5 5 5;
+  border-radius: 9px;
+  background: linear-gradient(45deg, #00b9b9, cyan);
+  margin: 0 5 0 5;
+}
+
 .tab-wrapper {
   height: 90%;
 }

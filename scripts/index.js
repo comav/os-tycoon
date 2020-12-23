@@ -1,7 +1,12 @@
 var localStorage = window.localStorage;
+<<<<<<< HEAD
 var tech, design, bugs;
 var news = [];
 var data;
+=======
+var progress = 0;
+var tech, design, bugs, news, data, feedback, isOk;
+>>>>>>> ecd276e (Infobar prototype)
 
 function changeTab(tabId) {
     let tabs = Array.from(document.getElementsByClassName('tab'));
@@ -61,3 +66,20 @@ function osChart() {
 
 }
 
+<<<<<<< HEAD
+=======
+function generateRandomNum(min, max) {
+    let i = Math.random() * (max - min) + min;
+    return Math.round(i);
+}
+
+function changeProgress (percentage) {
+    if (typeof percentage != 'number'){
+        console.error('Percentage must to be number!')
+        return;
+    } else {
+        document.getElementById('progress').style.width = percentage + '%';
+        return;
+    }
+}
+>>>>>>> ecd276e (Infobar prototype)
