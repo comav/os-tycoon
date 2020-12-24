@@ -47,7 +47,6 @@ h6 {
 
 .topLayer .gameMenu {
   z-index: 999;
-  width: 100px;
   height: 100%;
   display: -webkit-box;
   display: -ms-flexbox;
@@ -60,6 +59,10 @@ h6 {
       flex-basis: 10%;
   padding: 0 0 0 0;
   margin: 0 0 0 0;
+  background: url(https://i.pinimg.com/originals/93/18/23/931823ec9fb312333654cf0f276a3d94.png) no-repeat;
+  border-right-color: black;
+  border-right-width: 5px;
+  border-right-style: solid;
 }
 
 .topLayer .gameMenu .menuIcon {
@@ -77,7 +80,7 @@ h6 {
   -webkit-box-flex: 1;
       -ms-flex-positive: 1;
           flex-grow: 1;
-  width: 100px;
+  width: inherit;
   border-right-color: black;
   border-right-width: 5px;
   border-right-style: solid;
@@ -87,11 +90,18 @@ h6 {
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
+  background: rgba(255, 255, 255, 0.103);
+  -webkit-backdrop-filter: none;
+          backdrop-filter: none;
+  -webkit-transition: all 0.1s ease-in;
+  transition: all 0.1s ease-in;
 }
 
 .topLayer .gameMenu li:hover {
-  border-right-color: rgba(0, 0, 0, 0);
   cursor: pointer;
+  background: rgba(255, 255, 255, 0);
+  -webkit-backdrop-filter: blur(5px);
+          backdrop-filter: blur(5px);
 }
 
 .tab {
@@ -141,6 +151,12 @@ h6 {
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
+}
+
+.infoBarWrapper .infoBar .counters p {
+  display: -webkit-inline-box;
+  display: -ms-inline-flexbox;
+  display: inline-flex;
 }
 
 .infoBarWrapper .infoBar .progressbar {

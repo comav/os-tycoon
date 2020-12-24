@@ -36,13 +36,16 @@ h6 {
 
     .gameMenu {
         z-index: 999;
-        width: 100px;
         height: 100%;
         display: flex;
         flex-direction: column;
         flex-basis: 10%;
         padding: 0 0 0 0;
         margin: 0 0 0 0;
+        background: url(https://i.pinimg.com/originals/93/18/23/931823ec9fb312333654cf0f276a3d94.png) no-repeat;
+        border-right-color: black;
+        border-right-width: 5px;
+        border-right-style: solid;
 
         .menuIcon {
             width: 50px;
@@ -55,16 +58,21 @@ h6 {
             margin: 0 0 0 0;
             padding: 0;
             flex-grow: 1;
-            width: 100px;
+            width: inherit;
             border-right-color: black;
             border-right-width: 5px;
             border-right-style: solid;
             justify-content: center;
             align-items: center;
+            background: rgba(255, 255, 255, 0.103);
+            backdrop-filter: none;
+            transition: all 0.1s ease-in;
 
             &:hover {
-                border-right-color: rgba(0, 0, 0, 0);
+                // border-right-color: rgba(0, 0, 0, 0);
                 cursor: pointer;
+                background: rgba(255, 255, 255, 0);
+                backdrop-filter: blur(5px);
             }
         }
     }
@@ -96,6 +104,10 @@ h6 {
             justify-content: flex-end;
             flex-grow: 1;
             align-items: center;
+
+            p {
+                display: inline-flex;
+            }
         }
 
         .progressbar {
