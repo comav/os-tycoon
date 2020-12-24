@@ -75,8 +75,6 @@ function changeProgress (percentage) {
         return;
     }
 }
-<<<<<<< HEAD
-=======
 
 function generateEmployee () {
     var gender = data.employees.gender[generateRandomNum(0, 1)];
@@ -115,4 +113,3 @@ function generateEmployee () {
 //         employeeList.appendChild(newEmployee);
 //     }
 // }
->>>>>>> 4c5a8a6 (Added employee generator)
