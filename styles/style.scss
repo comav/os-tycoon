@@ -290,3 +290,14 @@ h6 {
 .rating-wrapper {
     display: inline-flex;
 }
+
+#employees {
+    display: flex;
+    flex-direction: column;
+    .list-switcher {
+        cursor: pointer;
+    }
+    .list {
+        display: none;
+    }
+}
