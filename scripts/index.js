@@ -83,3 +83,10 @@ function changeProgress (percentage) {
         return;
     }
 }
+
+function switchList(switchTo) {
+    var switchingTo = switchTo + '-employee-list';
+    var currentTab = document.getElementById(switchingTo);
+    $('.list').css('display', 'none');
+    currentTab.style.display = 'block';
+}

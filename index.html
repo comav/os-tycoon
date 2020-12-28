@@ -19,7 +19,7 @@
             <li onclick="changeTab('home')"><img class="menuIcon" src="assets/icons/home.png"></a></li>
             <li onclick="changeTab('stats'); osChart();"><img class="menuIcon" src="assets/icons/stats.png"></a></li>
             <li onclick="changeTab('add')"><img class="menuIcon" src="assets/icons/add.png"></a></li>
-            <li onclick="changeTab()"><img class="menuIcon" src="assets/icons/team.png"></a></li>
+            <li onclick="changeTab('employees')"><img class="menuIcon" src="assets/icons/team.png"></a></li>
             <li onclick="changeTab('feedback'); getFeedback()"><img class="menuIcon"
                     onclick="changeTab('feedback'); getFeedback()" src="assets/icons/feedback.png"></a></li>
             <li onclick="changeTab()"><img class="menuIcon" src="assets/icons/os.png"></a></li>
@@ -81,6 +81,16 @@
                         <p id="feedbackText"></p>
                     </div>
                     <button onclick="getFeedback()">Get feedback!</button>
+                </div>
+                <div id="employees" class="tab">
+                    <div id="switch-employee-list">
+                        <p id="resume-employees" class="list-switcher" onclick="switchList('resume')">Resumes</p>
+                        <p id="current-employees" class="list-switcher" onclick="switchList('current')">Current</p>
+                    </div>
+                    <div id="employee-list">
+                        <div id="current-employee-list" class="list">Current employees</div>
+                        <div id="resume-employee-list" class="list">Resumes of employees</div>
+                    </div>
                 </div>
             </div>
             <div class="infoBarWrapper">
