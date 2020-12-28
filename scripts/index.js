@@ -75,8 +75,8 @@ function generateRandomNum(min, max) {
     return Math.round(i);
 }
 
-function changeProgress (percentage) {
-    if (typeof percentage != 'number'){
+function changeProgress(percentage) {
+    if (typeof percentage != 'number') {
         console.error('Percentage must to be number!')
         return;
     } else {
@@ -85,46 +85,52 @@ function changeProgress (percentage) {
     }
 }
 
-function generateEmployee () {
+function generateEmployee() {
     var gender = data.employees.gender[generateRandomNum(0, 1)];
     if (gender == "male") {
-        var name = data.employees.male.names[generateRandomNum(0, 99)] + ' '+ data.employees.surnames[generateRandomNum(0, 199)];
+        var name = data.employees.male.names[generateRandomNum(0, 99)] + ' ' + data.employees.surnames[generateRandomNum(0, 199)];
         var age = generateRandomNum(20, 43);
+        var techSkill = generateRandomNum(1, 10);
+        var designSkill = generateRandomNum(1, 10);
+        var salary = ((techSkill + designSkill) / 2) * 100;
         var resultEmployee = {
             "name": name,
             "age": age,
-            "gender": gender
+            "gender": gender,
+            "designSkill": designSkill,
+            "techSkill": techSkill,
+            "salary": salary
         }
         employees.push(resultEmployee);
         console.log('1 ' + gender + ' employee was generated');
-        // updateEmployees();
         return;
     } if (gender == "female") {
-        var name = data.employees.female.names[generateRandomNum(0, 99)] + ' '+ data.employees.surnames[generateRandomNum(0, 199)];
+        var name = data.employees.female.names[generateRandomNum(0, 99)] + ' ' + data.employees.surnames[generateRandomNum(0, 199)];
         var age = generateRandomNum(20, 43);
+        var techSkill = generateRandomNum(1, 10);
+        var designSkill = generateRandomNum(1, 10);
+        var salary = ((techSkill + designSkill) / 2) * 100;
         var resultEmployee = {
             "name": name,
             "age": age,
-            "gender": gender
+            "gender": gender,
+            "designSkill": designSkill,
+            "techSkill": techSkill,
+            "salary": salary
         }
         employees.push(resultEmployee);
         console.log('1 ' + gender + ' employee was generated');
-        // updateEmployees();
         return;
     }
 }
 
-// function updateEmployees () {
-//     var employeeList = document.getElementById('employees');
-//     for (var i = 0; i == employees.length; i++) {
-//         var newEmployee = document.createElement('p');
-//         newEmployee.createTextNode(employees[i].name + ',' + employees[i].age + ',' + employees[i].gender);
-//         employeeList.appendChild(newEmployee);
-//     }
-// }
-function switchList(switchTo) {
-    var switchingTo = switchTo + '-employee-list';
-    var currentTab = document.getElementById(switchingTo);
+function switchList(listId) {
+    var currentTab = document.getElementById(listId);
     $('.list').css('display', 'none');
     currentTab.style.display = 'block';
+    for (var i = 1; i == employees.length; i++) {
+        var employeeInfo = createElement('p');
+        employeeInfo.innerText = employees[i].name + ', ' + employees[i].gender + ', ' + employees[i].age + ', ' + 'Design skill: ' + employees[i].designSkill + ', ' + 'Tech skill: ' + employees[i].techSkill + ', ' + '$' + employees[i].salary;
+        document.getElementById(listId).appendChild(employeeInfo);
+    }
 }

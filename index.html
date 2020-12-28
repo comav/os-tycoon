@@ -28,7 +28,6 @@
         <div class="tabWrapper">
             <div class="tab-wrapper">
                 <div id="home" class="tab">
-                    <div class="employees-list" id="employees"></div>
                     <div class="bubble-wrapper">
                         <div class="bubble" id="tech-bubble">
                             <p class="bubble-text" id="tech-bubble-text"></p>
@@ -85,11 +84,11 @@
                 </div>
                 <div id="employees" class="tab">
                     <div id="switch-employee-list">
-                        <p id="resume-employees" class="list-switcher" onclick="switchList('resume')">Resumes</p>
-                        <p id="current-employees" class="list-switcher" onclick="switchList('current')">Current</p>
+                        <p id="resume-employees" class="list-switcher" onclick="switchList('resume-employee-list')">Resumes</p>
+                        <p id="current-employees" class="list-switcher" onclick="switchList('current-employee-list')">Current</p>
                     </div>
                     <div id="employee-list">
-                        <div id="current-employee-list" class="list">Current employees</div>
+                        <div id="current-employee-list" class="list"></div>
                         <div id="resume-employee-list" class="list">Resumes of employees</div>
                     </div>
                 </div>
