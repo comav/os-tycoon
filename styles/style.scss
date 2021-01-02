@@ -313,3 +313,20 @@ h6 {
         display: none;
     }
 }
+
+#switch-employee-list {
+    display: inline-flex;
+}
+#switch-employee-list > * {
+    padding: 10 10 10 10;
+    background-color: rgb(180, 180, 180);
+    margin: 0;
+}
+
+.clicked {
+    background-color: white;
+}
+
+#employee-list {
+    background-color: white;
+}

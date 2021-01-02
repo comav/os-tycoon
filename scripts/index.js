@@ -1,5 +1,6 @@
 var localStorage = window.localStorage;
 var progress = 0;
+var employees = [];
 var tech, design, bugs, news, data, feedback, isOk;
 
 function changeTab(tabId) {
@@ -108,7 +109,7 @@ function generateEmployee() {
         let age = generateRandomNum(20, 43);
         let techSkill = generateRandomNum(1, 10);
         let designSkill = generateRandomNum(1, 10);
-        let salary = ((techSkill * designSkill) / 2) * 100;
+        let salary = (techSkill * designSkill) * 50;
         let resultEmployee = {
             "name": name,
             "age": age,
@@ -134,4 +135,9 @@ function switchList(listId) {
         employeeInfo.innerText = employees[i].name + ', ' + employees[i].gender + ', ' + employees[i].age + ', ' + 'Design skill: ' + employees[i].designSkill + ', ' + 'Tech skill: ' + employees[i].techSkill + ', ' + '$' + employees[i].salary;
         document.getElementById(listId).appendChild(employeeInfo);
     }
+}
+
+function clicked (at) {
+    clickedElement = '#' + at;
+    $(clickedElement).css('background-color', 'white');
 }
