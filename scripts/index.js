@@ -88,12 +88,12 @@ function changeProgress(percentage) {
 function generateEmployee() {
     var gender = data.employees.gender[generateRandomNum(0, 1)];
     if (gender == "male") {
-        var name = data.employees.male.names[generateRandomNum(0, 99)] + ' ' + data.employees.surnames[generateRandomNum(0, 199)];
-        var age = generateRandomNum(20, 43);
-        var techSkill = generateRandomNum(1, 10);
-        var designSkill = generateRandomNum(1, 10);
-        var salary = ((techSkill + designSkill) / 2) * 100;
-        var resultEmployee = {
+        let name = data.employees.male.names[generateRandomNum(0, 99)] + ' ' + data.employees.surnames[generateRandomNum(0, 199)];
+        let age = generateRandomNum(20, 43);
+        let techSkill = generateRandomNum(1, 10);
+        let designSkill = generateRandomNum(1, 10);
+        let salary = ((techSkill + designSkill) / 2) * 100;
+        let resultEmployee = {
             "name": name,
             "age": age,
             "gender": gender,
@@ -105,12 +105,12 @@ function generateEmployee() {
         console.log('1 ' + gender + ' employee was generated');
         return;
     } if (gender == "female") {
-        var name = data.employees.female.names[generateRandomNum(0, 99)] + ' ' + data.employees.surnames[generateRandomNum(0, 199)];
-        var age = generateRandomNum(20, 43);
-        var techSkill = generateRandomNum(1, 10);
-        var designSkill = generateRandomNum(1, 10);
-        var salary = ((techSkill + designSkill) / 2) * 100;
-        var resultEmployee = {
+        let name = data.employees.female.names[generateRandomNum(0, 99)] + ' ' + data.employees.surnames[generateRandomNum(0, 199)];
+        let age = generateRandomNum(20, 43);
+        let techSkill = generateRandomNum(1, 10);
+        let designSkill = generateRandomNum(1, 10);
+        let salary = ((techSkill * designSkill) / 2) * 100;
+        let resultEmployee = {
             "name": name,
             "age": age,
             "gender": gender,
@@ -128,8 +128,10 @@ function switchList(listId) {
     var currentTab = document.getElementById(listId);
     $('.list').css('display', 'none');
     currentTab.style.display = 'block';
-    for (var i = 1; i == employees.length; i++) {
-        var employeeInfo = createElement('p');
+    console.log('yee');
+    for (let i = 0; i <= employees.length; i++) {
+        console.log('uno');
+        var employeeInfo = document.createElement('div');
         employeeInfo.innerText = employees[i].name + ', ' + employees[i].gender + ', ' + employees[i].age + ', ' + 'Design skill: ' + employees[i].designSkill + ', ' + 'Tech skill: ' + employees[i].techSkill + ', ' + '$' + employees[i].salary;
         document.getElementById(listId).appendChild(employeeInfo);
     }
