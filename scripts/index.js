@@ -1,3 +1,5 @@
+
+
 var localStorage = window.localStorage;
 var progress = 0;
 var employees = [];
@@ -75,8 +77,17 @@ function generateRandomNum(min, max) {
     return Math.round(i);
 }
 
-function changeProgress (percentage) {
-    if (typeof percentage != 'number'){
+function generateSeed(lenght) {
+    var generatedSeed = '';
+    var characters = 'ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz1234567890';
+    for (var i = 0; i < 15; i++) {
+        generatedSeed += characters.charAt(Math.floor(Math.random() * characters.length));
+    }
+    return generatedSeed;
+}
+
+function changeProgress(percentage) {
+    if (typeof percentage != 'number') {
         console.error('Percentage must to be number!')
         return;
     } else {
@@ -93,13 +104,15 @@ function generateEmployee() {
         let techSkill = generateRandomNum(1, 10);
         let designSkill = generateRandomNum(1, 10);
         let salary = ((techSkill + designSkill) / 2) * 100;
+        let avatar = 'https://avatars.dicebear.com/api/' + 'male/' + generateSeed(10) + '.svg';
         let resultEmployee = {
             "name": name,
             "age": age,
             "gender": gender,
             "designSkill": designSkill,
             "techSkill": techSkill,
-            "salary": salary
+            "salary": salary,
+            "avatar": avatar
         }
         employees.push(resultEmployee);
         console.log('1 ' + gender + ' employee was generated');
@@ -110,13 +123,15 @@ function generateEmployee() {
         let techSkill = generateRandomNum(1, 10);
         let designSkill = generateRandomNum(1, 10);
         let salary = (techSkill * designSkill) * 50;
+        let avatar = 'https://avatars.dicebear.com/api/' + 'female/' + generateSeed(10) + '.svg';
         let resultEmployee = {
             "name": name,
             "age": age,
             "gender": gender,
             "designSkill": designSkill,
             "techSkill": techSkill,
-            "salary": salary
+            "salary": salary,
+            "avatar": avatar
         }
         employees.push(resultEmployee);
         console.log('1 ' + gender + ' employee was generated');
@@ -129,15 +144,24 @@ function switchList(listId) {
     $('.list').css('display', 'none');
     currentTab.style.display = 'block';
     console.log('yee');
-    for (let i = 0; i <= employees.length; i++) {
+    for (let i = 0; i < employees.length; i++) {
         console.log('uno');
         var employeeInfo = document.createElement('div');
+        var employeeAvatar = document.createElement('img');
+        employeeAvatar.setAttribute('src', employees[i].avatar);
+        employeeAvatar.setAttribute('width', '100px');
+        employeeAvatar.setAttribute('heigth', '100px');
         employeeInfo.innerText = employees[i].name + ', ' + employees[i].gender + ', ' + employees[i].age + ', ' + 'Design skill: ' + employees[i].designSkill + ', ' + 'Tech skill: ' + employees[i].techSkill + ', ' + '$' + employees[i].salary;
+        employeeInfo.appendChild(employeeAvatar);
         document.getElementById(listId).appendChild(employeeInfo);
     }
 }
 
-function clicked (at) {
+function clicked(at) {
     clickedElement = '#' + at;
     $(clickedElement).css('background-color', 'white');
+}
+
+function generateAvatar() {
+
 }
