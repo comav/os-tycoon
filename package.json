@@ -1,0 +1,29 @@
+{
+  "dependencies": {
+    "@dicebear/avatars-male-sprites": "^4.5.2",
+    "cookie-parser": "^1.4.5",
+    "cors": "^2.8.5",
+    "express": "^4.17.1"
+  },
+  "name": "ostycoon",
+  "description": "[![DeepScan grade](https://deepscan.io/api/teams/12160/projects/15140/branches/298814/badge/grade.svg)](https://deepscan.io/dashboard#view=project&tid=12160&pid=15140&bid=298814)",
+  "version": "1.0.0",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "electron ."
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/comav/os-tycoon.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/comav/os-tycoon/issues"
+  },
+  "homepage": "https://github.com/comav/os-tycoon#readme",
+  "devDependencies": {
+    "electron": "^11.2.3"
+  }
+}
