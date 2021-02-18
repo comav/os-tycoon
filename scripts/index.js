@@ -1,8 +1,11 @@
 var localStorage = window.localStorage;
 var progress = 0;
 var employees = [];
-var tech, design, bugs, news, data, feedback, isOk;
-
+var tech, design, bugs, news, data, feedback, isOk, chart;
+//some placeholder variables ahead
+var winosShare = 50;
+var mcosShare = 25;
+var linuxShare = 25;
 function changeTab(tabId) {
     let tabs = Array.from(document.getElementsByClassName('tab'));
     currentTab = document.getElementById(tabId);
@@ -28,40 +31,14 @@ function showBubbles() {
     $('.bubble').css('display', 'block');
 }
 
-function osChart() {
-    localStorage.setItem('windos', '78');
-    localStorage.setItem('mcos', '19');
-    localStorage.setItem('linux', '3');
-    var ctx = document.getElementById('os-chart');
-    var OSChart = new Chart(ctx, {
-        type: 'pie',
-        data: {
-            labels: ['WinOS', 'McOs', 'Linux'],
-            datasets: [{
-                label: 'OS share',
-                data: [localStorage.getItem('windos'), localStorage.getItem('mcos'), localStorage.getItem('linux')],
-                backgroundColor: [
-                    'rgba(255, 99, 132, 0.2)',
-                    'rgba(54, 162, 235, 0.2)',
-                    'rgba(255, 206, 86, 0.2)'],
-                borderColor: [
-                    'rgba(255, 99, 132, 1)',
-                    'rgba(54, 162, 235, 1)',
-                    'rgba(255, 206, 86, 1)'],
-                borderWidth: 1,
-                borderAlign: 'left'
-            }]
-        },
-        options: {
-            legend: {
-                display: true,
-                position: 'right'
-            },
-            mantainAspectRatio: false,
-            responsive: false
-        }
-    })
-
+function getChart (width, heigth, winosShare, mcosShare, linuxShare) {
+    let reqUrl = '//localhost:3000/chart?width=' + width + '?heigth=' + heigth + '?winosShare=' + winosShare + '?mcosShare=' + mcosShare + '?linuxShare=' + linuxShare;
+    let xhr = new XMLHttpRequest();
+    xhr.open('GET', reqUrl, true);
+    xhr.send;
+    xhr.onload(() => {
+        chart = xhr.response;
+    });
 }
 
 function getFeedback() {
@@ -73,6 +50,15 @@ function getFeedback() {
 function generateRandomNum(min, max) {
     let i = Math.random() * (max - min) + min;
     return Math.round(i);
+}
+
+function generateSeed(length) {
+    var generatedSeed = '';
+    var characters = 'ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz1234567890';
+    for (var i = 0; i < 15; i++) {
+        generatedSeed += characters.charAt(Math.floor(Math.random() * characters.length));
+    }
+    return generatedSeed;
 }
 
 function changeProgress(percentage) {

@@ -7,9 +7,6 @@
     <link rel="stylesheet" href="styles/style.css">
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
     <script src="scripts/index.js" defer></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.9.4/Chart.min.js"
-        integrity="sha512-d9xgZrVZpmmQlfonhQUvTR7lMPtO7NkZMkA0ABN3PHCbKA5nqylQ/yWlFAyY6hYgdF1Qh6nYiuADWwKB4C2WSw=="
-        crossorigin="anonymous" defer></script>
     <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
 </head>
 
@@ -17,7 +14,7 @@
     <div class="topLayer">
         <ul class="gameMenu">
             <li onclick="changeTab('home')"><img class="menuIcon" src="assets/icons/home.png"></a></li>
-            <li onclick="changeTab('stats'); osChart();"><img class="menuIcon" src="assets/icons/stats.png"></a></li>
+            <li onclick="changeTab('stats'); getChart();"><img class="menuIcon" src="assets/icons/stats.png"></a></li>
             <li onclick="changeTab('add')"><img class="menuIcon" src="assets/icons/add.png"></a></li>
             <li onclick="changeTab('employees')"><img class="menuIcon" src="assets/icons/team.png"></a></li>
             <li onclick="changeTab('feedback'); getFeedback()"><img class="menuIcon"
