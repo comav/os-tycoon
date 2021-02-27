@@ -10,7 +10,7 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.9.4/Chart.min.js"
         integrity="sha512-d9xgZrVZpmmQlfonhQUvTR7lMPtO7NkZMkA0ABN3PHCbKA5nqylQ/yWlFAyY6hYgdF1Qh6nYiuADWwKB4C2WSw=="
         crossorigin="anonymous" defer></script>
-    <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
+    <script>window.$ = window.jQuery = require('jquery');</script>
 </head>
 
 <body>
@@ -19,13 +19,8 @@
             <li onclick="changeTab('home')"><img class="menuIcon" src="assets/icons/home.png"></a></li>
             <li onclick="changeTab('stats'); osChart();"><img class="menuIcon" src="assets/icons/stats.png"></a></li>
             <li onclick="changeTab('add')"><img class="menuIcon" src="assets/icons/add.png"></a></li>
-<<<<<<< HEAD
-            <li onclick="changeTab()"><img class="menuIcon" src="assets/icons/team.png"></a></li>
-=======
             <li onclick="changeTab('employees')"><img class="menuIcon" src="assets/icons/team.png"></a></li>
->>>>>>> frontend
-            <li onclick="changeTab('feedback'); getFeedback()"><img class="menuIcon"
-                    onclick="changeTab('feedback'); getFeedback()" src="assets/icons/feedback.png"></a></li>
+            <li onclick="changeTab('feedback'); getFeedback()"><img class="menuIcon" src="assets/icons/feedback.png"></a></li>
             <li onclick="changeTab()"><img class="menuIcon" src="assets/icons/os.png"></a></li>
             <li onclick="changeTab()"><img class="menuIcon" src="assets/icons/update.png"></a></li>
         </ul>

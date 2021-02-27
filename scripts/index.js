@@ -1,5 +1,3 @@
-
-
 var localStorage = window.localStorage;
 var progress = 0;
 var employees = [];
@@ -21,10 +19,15 @@ function changeTab(tabId) {
 //code that runs on load
 changeTab("home");
 $('.bubble').css('display', 'none');
-$.getJSON("/assets/data/data.json", function (obtainedData) {
-    console.log('asd');
-    data = obtainedData;
-})
+let xhr = new XMLHttpRequest;
+fetch('http://127.0.0.1:3000/data')
+    .then(
+        function (u) { return u.json(); }
+    ).then(
+        function (json) {
+            data = json;
+        }
+    )
 
 function showBubbles() {
     $('.bubble').css('display', 'block');
