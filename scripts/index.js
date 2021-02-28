@@ -14,6 +14,8 @@ function changeTab(tabId) {
     }
     if (tabId == 'feedback') {
         currentTab.style.display = 'flex';
+    } if (tabId == 'employees') {
+        updateAvatars(employees.length);
     } else {
         currentTab.style.display = 'block';
     }
@@ -79,13 +81,16 @@ function generateEmployee() {
         let techSkill = generateRandomNum(1, 10);
         let designSkill = generateRandomNum(1, 10);
         let salary = ((techSkill + designSkill) / 2) * 100;
+        let avatar = generateSeed(10);
         let resultEmployee = {
             "name": name,
             "age": age,
             "gender": gender,
             "designSkill": designSkill,
             "techSkill": techSkill,
-            "salary": salary
+            "salary": salary,
+            "avatar": avatar,
+            "avatarImage": undefined
         }
         employees.push(resultEmployee);
         console.log('1 ' + gender + ' employee was generated');
@@ -95,14 +100,17 @@ function generateEmployee() {
         let age = generateRandomNum(20, 43);
         let techSkill = generateRandomNum(1, 10);
         let designSkill = generateRandomNum(1, 10);
-        let salary = ((techSkill * designSkill) / 2) * 100;
+        let salary = (techSkill * designSkill) * 50;
+        let avatar = generateSeed(10);
         let resultEmployee = {
             "name": name,
             "age": age,
             "gender": gender,
             "designSkill": designSkill,
             "techSkill": techSkill,
-            "salary": salary
+            "salary": salary,
+            "avatar": avatar,
+            "avatarImage": undefined
         }
         employees.push(resultEmployee);
         console.log('1 ' + gender + ' employee was generated');
@@ -118,7 +126,35 @@ function switchList(listId) {
     for (let i = 0; i <= employees.length; i++) {
         console.log('uno');
         var employeeInfo = document.createElement('div');
+        var employeeAvatar = document.createElement('img');
+        employeeAvatar.setAttribute('src', employees[i].avatarImage);
+        employeeAvatar.setAttribute('width', '100px');
+        employeeAvatar.setAttribute('heigth', '100px');
         employeeInfo.innerText = employees[i].name + ', ' + employees[i].gender + ', ' + employees[i].age + ', ' + 'Design skill: ' + employees[i].designSkill + ', ' + 'Tech skill: ' + employees[i].techSkill + ', ' + '$' + employees[i].salary;
         document.getElementById(listId).appendChild(employeeInfo);
     }
+}
+
+function clicked(at) {
+    clickedElement = '#' + at;
+    $(clickedElement).css('background-color', 'white');
+}
+
+function updateAvatars(number) {
+    for (let i = 0; i = number; i++) {
+        let url = '127.0.0.1:3000/avatar/' + employees[i].gender + '/' + employees[i].avatar;
+        let image;
+        fetch (url) 
+            .then(function (r) {
+                return r.blob();
+            })
+            .then(function (r) {
+                image = r;
+            })
+        employees[i].avatarImage = image;
+    }
+}
+
+function saveGame() {
+
 }

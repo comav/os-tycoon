@@ -1,5 +1,7 @@
 {
   "dependencies": {
+    "@dicebear/avatars": "^4.5.4",
+    "@dicebear/avatars-female-sprites": "^4.5.4",
     "@dicebear/avatars-male-sprites": "^4.5.2",
     "chart.js": "^2.9.4",
     "chartjs-node-canvas": "^3.1.0",
