@@ -9,7 +9,7 @@ function changeTab(tabId) {
     for (let i = 0; i < tabs.length; i++) {
         tabs[i].style.display = 'none';
     }
-    if (tabId == 'feedback') {
+    if (tabId == 'feedback' || tabId == 'employees') {
         currentTab.style.display = 'flex';
     } else {
         currentTab.style.display = 'block';
@@ -19,7 +19,6 @@ function changeTab(tabId) {
 //code that runs on load
 changeTab("home");
 $('.bubble').css('display', 'none');
-let xhr = new XMLHttpRequest;
 fetch('http://127.0.0.1:3000/data')
     .then(
         function (u) { return u.json(); }
@@ -34,9 +33,9 @@ function showBubbles() {
 }
 
 function osChart() {
-    localStorage.setItem('windos', '78');
-    localStorage.setItem('mcos', '19');
-    localStorage.setItem('linux', '3');
+    localStorage.setItem('windos', generateRandomNum(1, 100));
+    localStorage.setItem('mcos', generateRandomNum(1, 100));
+    localStorage.setItem('linux', generateRandomNum(1, 100));
     var ctx = document.getElementById('os-chart');
     var OSChart = new Chart(ctx, {
         type: 'pie',
@@ -80,7 +79,7 @@ function generateRandomNum(min, max) {
     return Math.round(i);
 }
 
-function generateSeed(lenght) {
+function generateSeed(length) {
     var generatedSeed = '';
     var characters = 'ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz1234567890';
     for (var i = 0; i < 15; i++) {
@@ -107,7 +106,8 @@ function generateEmployee() {
         let techSkill = generateRandomNum(1, 10);
         let designSkill = generateRandomNum(1, 10);
         let salary = ((techSkill + designSkill) / 2) * 100;
-        let avatar = 'https://avatars.dicebear.com/api/' + 'male/' + generateSeed(10) + '.svg';
+        let avatar = generateSeed(10);
+        let avatarImage = 'http://avatars.dicebear.com/api/' + gender + '/' + seed;
         let resultEmployee = {
             "name": name,
             "age": age,
@@ -115,7 +115,8 @@ function generateEmployee() {
             "designSkill": designSkill,
             "techSkill": techSkill,
             "salary": salary,
-            "avatar": avatar
+            "avatar": avatar,
+            "avatarImage": avatarImage
         }
         employees.push(resultEmployee);
         console.log('1 ' + gender + ' employee was generated');
@@ -126,7 +127,8 @@ function generateEmployee() {
         let techSkill = generateRandomNum(1, 10);
         let designSkill = generateRandomNum(1, 10);
         let salary = (techSkill * designSkill) * 50;
-        let avatar = 'https://avatars.dicebear.com/api/' + 'female/' + generateSeed(10) + '.svg';
+        let avatar = generateSeed(10);
+        let avatarImage = 'http://avatars.dicebear.com/api/' + gender + '/' + seed;
         let resultEmployee = {
             "name": name,
             "age": age,
@@ -134,7 +136,8 @@ function generateEmployee() {
             "designSkill": designSkill,
             "techSkill": techSkill,
             "salary": salary,
-            "avatar": avatar
+            "avatar": avatar,
+            "avatarImage": avatarImage
         }
         employees.push(resultEmployee);
         console.log('1 ' + gender + ' employee was generated');
@@ -142,14 +145,6 @@ function generateEmployee() {
     }
 }
 
-// function updateEmployees () {
-//     var employeeList = document.getElementById('employees');
-//     for (var i = 0; i == employees.length; i++) {
-//         var newEmployee = document.createElement('p');
-//         newEmployee.createTextNode(employees[i].name + ',' + employees[i].age + ',' + employees[i].gender);
-//         employeeList.appendChild(newEmployee);
-//     }
-// }
 function switchList(listId) {
     var currentTab = document.getElementById(listId);
     $('.list').css('display', 'none');
@@ -159,7 +154,7 @@ function switchList(listId) {
         console.log('uno');
         var employeeInfo = document.createElement('div');
         var employeeAvatar = document.createElement('img');
-        employeeAvatar.setAttribute('src', employees[i].avatar);
+        employeeAvatar.setAttribute('src', employees[i].avatarImage);
         employeeAvatar.setAttribute('width', '100px');
         employeeAvatar.setAttribute('heigth', '100px');
         employeeInfo.innerText = employees[i].name + ', ' + employees[i].gender + ', ' + employees[i].age + ', ' + 'Design skill: ' + employees[i].designSkill + ', ' + 'Tech skill: ' + employees[i].techSkill + ', ' + '$' + employees[i].salary;
@@ -173,6 +168,21 @@ function clicked(at) {
     $(clickedElement).css('background-color', 'white');
 }
 
-function generateAvatar() {
+function updateAvatars(number) {
+    for (let i = 0; i = number; i++) {
+        let url = '127.0.0.1:3000/avatar/' + employees[i].gender + '/' + employees[i].avatar;
+        let image;
+        fetch(url)
+            .then(function (r) {
+                return r.blob();
+            })
+            .then(function (r) {
+                image = r;
+            })
+        employees[i].avatarImage = image;
+    }
+}
+
+function saveGame() {
 
 }
