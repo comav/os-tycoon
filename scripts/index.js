@@ -1,11 +1,9 @@
 var localStorage = window.localStorage;
 var progress = 0;
 var employees = [];
-var tech, design, bugs, news, data, feedback, isOk, chart;
-//some placeholder variables ahead
-var winosShare = 50;
-var mcosShare = 25;
-var linuxShare = 25;
+var tech, design, bugs, news, data, feedback, isOk;
+var money = 214; //random value
+
 function changeTab(tabId) {
     let tabs = Array.from(document.getElementsByClassName('tab'));
     currentTab = document.getElementById(tabId);
@@ -140,21 +138,43 @@ function clicked(at) {
     $(clickedElement).css('background-color', 'white');
 }
 
-function updateAvatars(number) {
-    for (let i = 0; i = number; i++) {
-        let url = '127.0.0.1:3000/avatar/' + employees[i].gender + '/' + employees[i].avatar;
-        let image;
-        fetch (url) 
-            .then(function (r) {
-                return r.blob();
-            })
-            .then(function (r) {
-                image = r;
-            })
-        employees[i].avatarImage = image;
-    }
-}
+// function updateAvatars(number) {
+//     for (let i = 0; i = number; i++) {
+//         let url = '127.0.0.1:3000/avatar/' + employees[i].gender + '/' + employees[i].avatar;
+//         let image;
+//         fetch(url)
+//             .then(function (r) {
+//                 return r.blob();
+//             })
+//             .then(function (r) {
+//                 image = r;
+//             })
+//         employees[i].avatarImage = image;
+//     }
+// }
 
-function saveGame() {
+let interval = 5000;
+//some debug vars ahead
+let time = 3234;
+let companyName = 'AppleSoft';
+let osName = 'Window X';
+setInterval(
+    function () {
+        console.log('Saving game');
+        let sendData = {};
+        sendData.time = time;
+        sendData.employees = employees;
+        sendData.companyName = companyName;
+        sendData.money = money;
+        sendData.osName = osName;
 
-}
+        const response = fetch('http://127.0.0.1:3000/save', {
+            method: 'POST',
+            headers: {
+                'Accept': 'application/json',
+                'Content-Type': 'application/json'
+            },
+            body: JSON.stringify(sendData)
+        });
+    }, interval
+)

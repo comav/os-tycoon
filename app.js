@@ -1,13 +1,16 @@
-const Avatars = require('@dicebear/avatars');
-const maleSprites = require('@dicebear/avatars-male-sprites');
-const femaleSprites = require('@dicebear/avatars-female-sprites');
-
 const createError = require('http-errors');
 const express = require('express');
 const path = require('path');
 const cookieParser = require('cookie-parser');
+const fs = require('fs');
+const bodyParser = require('body-parser');
 
-const cors = require('cors')
+const cors = require('cors');
+
+const low = require('lowdb');
+const FileSync = require('lowdb/adapters/FileSync');
+const adapter = new FileSync('userData/db.json');
+const db = low(adapter);
 
 //const chartRouter = require('./routers/chartRouter');
 
@@ -26,26 +29,39 @@ server.get('/data', function (req, res) {
   res.send(data);
 })
 
-server.get('/avatar/:gender/:seed', function (req, res) {
-  let gender = req.params.gender;
-  let seed = req.params.seed;
-  let svg;
-  let avatars;
-  let options = {};
-  switch (gender) {
-    case 'male':
-      options = {};
-      avatars = new Avatars(options, maleSprites);
-      svg = avatars.create(seed);
-      break;
-    case 'female':
-      options = {};
-      avatars = new Avatars(options, femaleSprites);
-      svg = avatars.create(seed);
-      break;
-  }
-  res.sendFile(svg);
+server.post('/save', function (res, req) {
+  console.log('Autosaving.....');
+  let time = req.body.time;
+  let employees = req.body.employees;
+  //write time
+  db.get('time')
+    .push(time)
+    .write();
+  //write employees
+  db.get('employees')
+    .push(employees)
+    .write();
+  console.log('Autosave Comleted!');
 })
+
+// server.get('/avatar/:gender/:seed', function (req, res) {
+//   let gender = req.params.gender;
+//   let seed = req.params.seed;
+//   let avatar;
+//   if (gender == 'male') {
+//     let options = {};
+//     let avatars = new Avatars(maleSprites, options);
+//     let result = avatars.create(seed);
+//     avatar = result;
+//   } if (gender == 'female') {
+//     let options = {};
+//     let avatars = new Avatars(femaleSprites, options);
+//     let result = avatars.create(seed);
+//   } else {
+//     console.log('error');
+//   }
+//   res.sendFile(avatar);
+// })
 
 // catch 404 and forward to error handler
 server.use(function (req, res, next) {
@@ -93,5 +109,4 @@ app.on('activate', () => {
 })
 
 server.listen(3000);
-
 module.exports = server;
