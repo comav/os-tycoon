@@ -16,8 +16,6 @@ function changeTab(tabId) {
     }
     if (tabId == 'feedback') {
         currentTab.style.display = 'flex';
-    } if (tabId == 'employees') {
-        updateAvatars(employees.length);
     } else {
         currentTab.style.display = 'block';
     }
@@ -26,10 +24,6 @@ function changeTab(tabId) {
 //code that runs on load
 changeTab("home");
 $('.bubble').css('display', 'none');
-$.getJSON("/assets/data/data.json", function (obtainedData) {
-    console.log('asd');
-    data = obtainedData;
-})
 
 function showBubbles() {
     $('.bubble').css('display', 'block');

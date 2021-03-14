@@ -11,7 +11,8 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.9.4/Chart.min.js"
         integrity="sha512-d9xgZrVZpmmQlfonhQUvTR7lMPtO7NkZMkA0ABN3PHCbKA5nqylQ/yWlFAyY6hYgdF1Qh6nYiuADWwKB4C2WSw=="
         crossorigin="anonymous" defer></script>
-    <script>window.$ = window.jQuery = require('jquery');</script>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"
+        integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
 </head>
 
 <body>
@@ -25,10 +26,10 @@
                     onclick="changeTab('feedback'); getFeedback()" src="assets/icons/feedback.png"></a></li>
             <li onclick="changeTab()"><img class="menuIcon" src="assets/icons/os.png"></a></li>
             <li onclick="changeTab()"><img class="menuIcon" src="assets/icons/update.png"></a></li>
+            <li onclick="changeTab('debug')"><img class="menuIcon" src="assets/icons/debug.png"></li>
         </ul>
         <div class="tabWrapper">
             <div class="tab-wrapper">
-                <button onclick="saveGame()">saveGame</button>
                 <div id="home" class="tab">
                     <div class="bubble-wrapper">
                         <div class="bubble" id="tech-bubble">
@@ -86,8 +87,10 @@
                 </div>
                 <div id="employees" class="tab">
                     <div id="switch-employee-list">
-                        <p id="resume-employees" class="list-switcher" onclick="switchList('resume-employee-list')">Resumes</p>
-                        <p id="current-employees" class="list-switcher" onclick="switchList('current-employee-list')">Current</p>
+                        <p id="resume-employees" class="list-switcher" onclick="switchList('resume-employee-list')">
+                            Resumes</p>
+                        <p id="current-employees" class="list-switcher" onclick="switchList('current-employee-list')">
+                            Current</p>
                     </div>
                     <div id="employee-list">
                         <div id="current-employee-list" class="list"></div>
@@ -95,10 +98,16 @@
                         <button onclick="generateEmployee()">generate employee</button>
                     </div>
                 </div>
+                <div id="debug" class="tab">
+                    <h2>Debug tools</h2>
+                    <button onclick="saveGame()">saveGame</button>
+                </div>
             </div>
             <div class="infoBarWrapper">
                 <div class="infoBar">
-                    <div class="progressbar" id="progressbar"><div class="progress" id="progress"></div></div>
+                    <div class="progressbar" id="progressbar">
+                        <div class="progress" id="progress"></div>
+                    </div>
                     <div class="counters">
                         <p class="money" id="money"><span class="material-icons">attach_money</span>8800553535</p>
                         <p class="research" id="res-points"><span class="material-icons">science</span>100500</p>
