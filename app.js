@@ -26,13 +26,11 @@ server.use(bodyParser.json());
 server.use(bodyParser.urlencoded({extended: false}));
 server.use(express.static(path.join(__dirname, 'public')));
 
-server.get('/data', function (req, res) {
-  let dataPath = path.join(__dirname, 'assets', 'data', 'data') + '.json';
-  let data = fs.readFileSync(dataPath, 'utf-8');
-  res.send(data);
-})
+const saveRouter = require('./routers/saveRouter');
 
-server.post('/save', function (res, req) {
+//server.use('/save', saveRouter);
+
+router.post('/save', function (res, req) {
   console.log('Autosaving.....');
   let time = res.body.time;
   let employees = res.body.employees;
@@ -41,6 +39,12 @@ server.post('/save', function (res, req) {
     .write();
   console.log('Autosave Comleted!');
   console.log(db.get('employees').value());
+})
+
+server.get('/data', function (req, res) {
+  let dataPath = path.join(__dirname, 'assets', 'data', 'data') + '.json';
+  let data = fs.readFileSync(dataPath, 'utf-8');
+  res.send(data);
 })
 
 // server.get('/avatar/:gender/:seed', function (req, res) {
