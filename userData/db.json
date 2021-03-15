@@ -1,9 +1,35 @@
 {
-    "time": 0,
-    "employees": {
-
+  "time": 0,
+  "employees": [
+    {
+      "name": "Autumn Tucker",
+      "age": 27,
+      "gender": "female",
+      "designSkill": 6,
+      "techSkill": 7,
+      "salary": 2100,
+      "avatar": "9KKH33NwcYzwmtW"
     },
-    "companyName": null,
-    "money": 0,
-    "osName": null
+    {
+      "name": "Ryan White",
+      "age": 35,
+      "gender": "male",
+      "designSkill": 4,
+      "techSkill": 7,
+      "salary": 550,
+      "avatar": "TFCidpwNZ5obrta"
+    },
+    {
+      "name": "Brooklyn Herrera",
+      "age": 33,
+      "gender": "female",
+      "designSkill": 7,
+      "techSkill": 1,
+      "salary": 350,
+      "avatar": "t54jJRGRsqJJocr"
+    }
+  ],
+  "companyName": null,
+  "money": 0,
+  "osName": null
 }

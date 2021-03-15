@@ -5,6 +5,11 @@ const cookieParser = require('cookie-parser');
 const fs = require('fs');
 const bodyParser = require('body-parser');
 
+const lowdb = require('lowdb');
+const FileSync = require('lowdb/adapters/FileSync');
+const adapter = new FileSync('userData/db.json');
+const db = lowdb(adapter);
+
 const cors = require('cors');
 
 //const chartRouter = require('./routers/chartRouter');
@@ -22,16 +27,20 @@ server.use(bodyParser.urlencoded({extended: false}));
 server.use(express.static(path.join(__dirname, 'public')));
 
 server.get('/data', function (req, res) {
+  let dataPath = path.join(__dirname, 'assets', 'data', 'data') + '.json';
   let data = fs.readFileSync(dataPath, 'utf-8');
   res.send(data);
 })
 
 server.post('/save', function (res, req) {
   console.log('Autosaving.....');
-  let time = req.body.time;
-  let employees = req.body.employees;
+  let time = res.body.time;
+  let employees = res.body.employees;
   console.log(employees);
+  db.set('employees', employees)
+    .write();
   console.log('Autosave Comleted!');
+  console.log(db.get('employees').value());
 })
 
 // server.get('/avatar/:gender/:seed', function (req, res) {

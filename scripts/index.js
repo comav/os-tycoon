@@ -24,6 +24,13 @@ function changeTab(tabId) {
 //code that runs on load
 changeTab("home");
 $('.bubble').css('display', 'none');
+fetch ('http://127.0.0.1:3000/data')
+    .then((u) => {
+        return u.json();
+    })
+    .then((jsonData) => {
+        data = jsonData;
+    })
 
 function showBubbles() {
     $('.bubble').css('display', 'block');
@@ -50,7 +57,7 @@ function generateRandomNum(min, max) {
     return Math.round(i);
 }
 
-function generateSeed(length) {
+function generateSeed() {
     var generatedSeed = '';
     var characters = 'ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz1234567890';
     for (var i = 0; i < 15; i++) {
