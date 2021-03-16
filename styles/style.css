@@ -161,7 +161,7 @@ h6 {
   border-radius: 5px;
 }
 
-.infoBarWrapper .infoBar .money {
+.infoBarWrapper .infoBar .money-wrapper {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;

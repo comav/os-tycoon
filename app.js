@@ -26,11 +26,7 @@ server.use(bodyParser.json());
 server.use(bodyParser.urlencoded({extended: false}));
 server.use(express.static(path.join(__dirname, 'public')));
 
-const saveRouter = require('./routers/saveRouter');
-
-//server.use('/save', saveRouter);
-
-router.post('/save', function (res, req) {
+server.post('/save', function (res, req) {
   console.log('Autosaving.....');
   let time = res.body.time;
   let employees = res.body.employees;
@@ -47,41 +43,6 @@ server.get('/data', function (req, res) {
   res.send(data);
 })
 
-// server.get('/avatar/:gender/:seed', function (req, res) {
-//   let gender = req.params.gender;
-//   let seed = req.params.seed;
-//   let avatar;
-//   if (gender == 'male') {
-//     let options = {};
-//     let avatars = new Avatars(maleSprites, options);
-//     let result = avatars.create(seed);
-//     avatar = result;
-//   } if (gender == 'female') {
-//     let options = {};
-//     let avatars = new Avatars(femaleSprites, options);
-//     let result = avatars.create(seed);
-//   } else {
-//     console.log('error');
-//   }
-//   res.sendFile(avatar);
-// })
-
-// catch 404 and forward to error handler
-server.use(function (req, res, next) {
-  next(createError(404));
-});
-
-// error handler
-// server.use(function (err, req, res, next) {
-//   // set locals, only providing error in development
-//   res.locals.message = err.message;
-//   res.locals.error = req.server.get('env') === 'development' ? err : {};
-
-//   // render the error page
-//   res.status(err.status || 500);
-//   res.render('error');
-// });
-
 console.log('Server is running at port 3000');
 // electron part
 function createWindow() {
@@ -94,7 +55,7 @@ function createWindow() {
     icon: path.join(__dirname, 'assets/os-icons/icon-1.png')
   })
 
-  win.loadFile('index.html');
+  win.loadFile('startMenu.html');
 }
 
 app.whenReady().then(createWindow);
