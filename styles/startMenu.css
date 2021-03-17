@@ -18,5 +18,20 @@
   width: 200px;
   height: 50px;
   margin: 0 0 0 0;
+  border: 1px black solid;
+  border-radius: 50px;
+  cursor: pointer;
+}
+
+.main-menu {
+  width: 100%;
+  height: 100%;
+  z-index: 999;
+  display: absolute;
+}
+
+body {
+  -webkit-transition: all 5ms ease-in-out;
+  transition: all 5ms ease-in-out;
 }
 /*# sourceMappingURL=startMenu.css.map */

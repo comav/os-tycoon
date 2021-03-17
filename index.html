@@ -5,10 +5,12 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>OS Tycoon</title>
     <link rel="stylesheet" href="styles/style.css">
+    <link rel="stylesheet" href="styles/startMenu.css">
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
     <script src="scripts/index.js" defer></script>
     <script src="scripts/history.js" defer></script>
     <script src="scripts/events.js" defer></script>
+    <script src="scripts/startMenu.js" defer></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.9.4/Chart.min.js"
         integrity="sha512-d9xgZrVZpmmQlfonhQUvTR7lMPtO7NkZMkA0ABN3PHCbKA5nqylQ/yWlFAyY6hYgdF1Qh6nYiuADWwKB4C2WSw=="
         crossorigin="anonymous" defer></script>
@@ -16,7 +18,17 @@
         integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
 </head>
 
-<body>
+<body id="body">
+    <div class="main-menu">
+        <div class="menu-wrapper">
+            <img src="assets/images/logo.png" alt="OS Tycoon logo" class="logo">
+            <ul class="menu"><button class="menu-button" id="start-button" onclick="newGame()">New Game</button></ul>
+            <ul class="menu"><button class="menu-button">Load Game</button></ul>
+            <ul class="menu"><button class="menu-button">Settings</button></ul>
+            <ul class="menu"><button class="menu-button">About</button></ul>
+            <ul class="menu"><button class="menu-button" id="quit-button" onclick="quitGame()">Quit</button></ul>
+        </div>
+    </div>
     <div class="topLayer">
         <ul class="gameMenu">
             <li onclick="changeTab('home')"><img class="menuIcon" src="assets/icons/home.png"></a></li>

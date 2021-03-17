@@ -43,6 +43,10 @@ server.get('/data', function (req, res) {
   res.send(data);
 })
 
+server.get('/quit', (req,res) => {
+  app.quit();
+})
+
 console.log('Server is running at port 3000');
 // electron part
 function createWindow() {
@@ -55,7 +59,7 @@ function createWindow() {
     icon: path.join(__dirname, 'assets/os-icons/icon-1.png')
   })
 
-  win.loadFile('startMenu.html');
+  win.loadFile('index.html');
 }
 
 app.whenReady().then(createWindow);
