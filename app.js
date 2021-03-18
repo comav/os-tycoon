@@ -47,6 +47,12 @@ server.get('/quit', (req,res) => {
   app.quit();
 })
 
+server.get('/load-audio', (res,req) => {
+  let audioPath = path.join(__dirname, 'assets', 'music');
+  let audio = Array.from([audioPath + '/bg1.mp3', audioPath + '/bg2.mp3', audioPath + '/keyboard.mp3']);
+  res.json(audio);
+})
+
 console.log('Server is running at port 3000');
 // electron part
 function createWindow() {

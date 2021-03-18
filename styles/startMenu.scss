@@ -10,6 +10,10 @@
         border: 1px black solid;
         border-radius: 50px;
         cursor: pointer;
+        transition: all 0.3s ease-in-out;
+        &:hover {
+            border-width: 0.5px;
+        }
     }
 }
 
@@ -21,5 +25,5 @@
 }
 
 body {
-    transition: all 5ms ease-in-out;
+    transition: all 0.5s ease-in-out;
 }

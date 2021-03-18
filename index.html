@@ -19,11 +19,11 @@
 </head>
 
 <body id="body">
-    <audio src="assets/music/bg1.mp3" autoplay>
     <div class="main-menu">
+        <audio src="assets/music/bg1.mp3" autoplay></audio>
         <div class="menu-wrapper">
             <img src="assets/images/logo.png" alt="OS Tycoon logo" class="logo">
-            <ul class="menu"><button class="menu-button" id="start-button" onclick="newGame()">New Game</button></ul>
+            <ul class="menu"><button class="menu-button" id="start-button" onclick="newGame(); changeTime()">New Game</button></ul>
             <ul class="menu"><button class="menu-button">Load Game</button></ul>
             <ul class="menu"><button class="menu-button">Settings</button></ul>
             <ul class="menu"><button class="menu-button">About</button></ul>

@@ -21,6 +21,12 @@
   border: 1px black solid;
   border-radius: 50px;
   cursor: pointer;
+  -webkit-transition: all 0.3s ease-in-out;
+  transition: all 0.3s ease-in-out;
+}
+
+.menu-wrapper button:hover {
+  border-width: 0.5px;
 }
 
 .main-menu {
@@ -31,7 +37,7 @@
 }
 
 body {
-  -webkit-transition: all 5ms ease-in-out;
-  transition: all 5ms ease-in-out;
+  -webkit-transition: all 0.5s ease-in-out;
+  transition: all 0.5s ease-in-out;
 }
 /*# sourceMappingURL=startMenu.css.map */

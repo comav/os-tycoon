@@ -30,6 +30,7 @@
   },
   "homepage": "https://github.com/comav/os-tycoon#readme",
   "devDependencies": {
-    "electron": "^12.0.1"
+    "electron": "^12.0.1",
+    "electron-packager": "^15.2.0"
   }
 }

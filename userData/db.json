@@ -1,52 +1,6 @@
 {
   "time": 0,
-  "employees": [
-    {
-      "name": "Maya Stewart",
-      "age": 39,
-      "gender": "female",
-      "designSkill": 9,
-      "techSkill": 5,
-      "salary": 2250,
-      "avatar": "UrxqiizZedxdzeB"
-    },
-    {
-      "name": "Savannah Ruiz",
-      "age": 32,
-      "gender": "female",
-      "designSkill": 6,
-      "techSkill": 5,
-      "salary": 1500,
-      "avatar": "KzUa5pHCSnOhdNd"
-    },
-    {
-      "name": "Joshua Patterson",
-      "age": 40,
-      "gender": "male",
-      "designSkill": 9,
-      "techSkill": 6,
-      "salary": 750,
-      "avatar": "YeRCsYg6sfoOMB6"
-    },
-    {
-      "name": "Alexander Kennedy",
-      "age": 27,
-      "gender": "male",
-      "designSkill": 6,
-      "techSkill": 8,
-      "salary": 700,
-      "avatar": "TQCh3MUaTYoaveS"
-    },
-    {
-      "name": "Serenity Payne",
-      "age": 29,
-      "gender": "female",
-      "designSkill": 9,
-      "techSkill": 4,
-      "salary": 1800,
-      "avatar": "JuIoiRZzoNPix80"
-    }
-  ],
+  "employees": [],
   "companyName": null,
   "money": 0,
   "osName": null
