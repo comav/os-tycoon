@@ -12,8 +12,6 @@ const db = lowdb(adapter);
 
 const cors = require('cors');
 
-//const chartRouter = require('./routers/chartRouter');
-
 const server = express();
 
 const { app, BrowserWindow } = require('electron');
