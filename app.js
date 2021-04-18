@@ -37,6 +37,14 @@ server.post('/save', function (res, req) {
   console.log(db.get('employees').value());
 })
 
+server.get('/load', function (req, res) {
+  let time = db.get('time').value();
+  let money = db.get('money').value();
+  let employees = db.get('employees').value();
+  let sendData = {"employees": employees};
+  res.json(sendData);
+})
+
 server.get('/data', function (req, res) {
   let dataPath = path.join(__dirname, 'assets', 'data', 'data') + '.json';
   let data = fs.readFileSync(dataPath, 'utf-8');
@@ -47,11 +55,11 @@ server.get('/quit', (req,res) => {
   app.quit();
 })
 
-server.get('/load-audio', (res,req) => {
-  let audioPath = path.join(__dirname, 'assets', 'music');
-  let audio = Array.from([audioPath + '/bg1.mp3', audioPath + '/bg2.mp3', audioPath + '/keyboard.mp3']);
-  res.json(audio);
-})
+// server.get('/load-audio', (res,req) => {
+//   let audioPath = path.join(__dirname, 'assets', 'music');
+//   let audio = Array.from([audioPath + '/bg1.mp3', audioPath + '/bg2.mp3', audioPath + '/keyboard.mp3']);
+//   res.json(audio);
+// })
 
 console.log('Server is running at port 3000');
 // electron part
@@ -69,8 +77,6 @@ function createWindow() {
 }
 
 app.whenReady().then(createWindow);
-
-//app.disableHardwareAcceleration();
 
 app.on('window-all-closed', () => {
   if (process.platform != 'darwin') {

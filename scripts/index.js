@@ -5,8 +5,9 @@ var tech, design, bugs, news, data, feedback, isOk;
 var money = 214; //random value
 //some debug vars ahead
 let time = 3234;
-let companyName = 'AppleSoft';
+let companyName = 'ApplSoft';
 let osName = 'Window X';
+var okBoomer;
 
 function changeTab(tabId) {
     let tabs = Array.from(document.getElementsByClassName('tab'));
@@ -30,6 +31,17 @@ fetch ('http://127.0.0.1:3000/data')
     })
     .then((jsonData) => {
         data = jsonData;
+    })
+
+fetch ('http://127.0.0.1:3000/load')
+    .then((u) => {
+        return u.json();
+    })
+    .then((loadState) => {
+        okBoomer = loadState;
+        osName = loadState.osName;
+        money = loadState.money;
+        employees = loadState[0];
     })
 
 function showBubbles() {

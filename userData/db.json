@@ -1,6 +1,70 @@
 {
   "time": 0,
-  "employees": [],
+  "employees": [
+    {
+      "name": "Brayden White",
+      "age": 34,
+      "gender": "male",
+      "designSkill": 9,
+      "techSkill": 4,
+      "salary": 650,
+      "avatar": "5NfIlSO1QSAG1k0"
+    },
+    {
+      "name": "Violet Stewart",
+      "age": 41,
+      "gender": "female",
+      "designSkill": 2,
+      "techSkill": 8,
+      "salary": 800,
+      "avatar": "YkZtstl4QgxdCbM"
+    },
+    {
+      "name": "Mia Ryan",
+      "age": 27,
+      "gender": "female",
+      "designSkill": 4,
+      "techSkill": 9,
+      "salary": 1800,
+      "avatar": "yFL0yR1kDNeV76A"
+    },
+    {
+      "name": "Henry Kelley",
+      "age": 27,
+      "gender": "male",
+      "designSkill": 8,
+      "techSkill": 2,
+      "salary": 500,
+      "avatar": "F6pSAecSJLLvEEf"
+    },
+    {
+      "name": "Sebastian Lee",
+      "age": 36,
+      "gender": "male",
+      "designSkill": 2,
+      "techSkill": 8,
+      "salary": 500,
+      "avatar": "zSwvz5WdkvLKhOE"
+    },
+    {
+      "name": "Emilia Sanders",
+      "age": 30,
+      "gender": "female",
+      "designSkill": 8,
+      "techSkill": 7,
+      "salary": 2800,
+      "avatar": "e3rms76xmW1nxYs"
+    },
+    {
+      "name": "Ethan Wallace",
+      "age": 37,
+      "gender": "male",
+      "designSkill": 7,
+      "techSkill": 7,
+      "salary": 700,
+      "avatar": "ftjWp0gfLDgTjja"
+    }
+  ],
   "companyName": null,
   "money": 0,
   "osName": null
